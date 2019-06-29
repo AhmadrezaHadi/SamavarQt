@@ -52,9 +52,9 @@ void Login::on_loginButton_clicked()
     {
         wr.setPassword("1");
         wr.setPassword("2");
-        if(username == wr.getUsername())
+        if(username == pp.getUsername())
         {
-            if(password == wr.getPassword())
+            if(password == pp.getPassword())
             {
                 //TODO hashesh kon daius
                 QMessageBox* msg = new QMessageBox;
@@ -74,9 +74,9 @@ void Login::on_loginButton_clicked()
     }
     else if(Index == 2)
     {
-        if(username == pp.getUsername())
+        if(username == wr.getUsername())
         {
-            if(password == pp.getPassword())
+            if(password == wr.getPassword())
             {
                 //TODO hashesh kon daius
                 QMessageBox* msg = new QMessageBox;

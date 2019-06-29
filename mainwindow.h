@@ -13,6 +13,15 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void on_bbvbLoginButton_clicked();
+
+    void on_wrLoginButton_clicked();
+
+    void on_ppLoginButton_clicked();
+
+    void on_teamLoginButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

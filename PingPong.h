@@ -16,7 +16,7 @@ typedef struct PPResult{
 #include "Sport.h"
 #include "shit.h"
 
-class PingPong : Sport{
+class PingPong :public Sport{
 protected:
     QVector<Tournament<PPResult>> tours;
     PingPong(){}

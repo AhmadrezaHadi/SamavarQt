@@ -11,9 +11,9 @@ QVector<Tournament<PPResult>> PingPong::getTours() const {
 
 Tournament<PPResult> PingPong::getTourById(int id) const {
     for (int i = 0; i < tours.size(); ++i) {
-       /* if (tours[i].getTourId() == id){
+        if (tours[i].getTourId() == id){
             return tours[i];
-        }*/
+        }
     }
 }
 

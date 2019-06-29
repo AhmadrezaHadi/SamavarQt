@@ -5,9 +5,9 @@
 #ifndef SAMAVAR_SPORT_H
 #define SAMAVAR_SPORT_H
 
+#include "Person.h"
 #include <Qstring>
 #include <QVector>
-#include "Person.h"
 #include "Team.h"
 
 
