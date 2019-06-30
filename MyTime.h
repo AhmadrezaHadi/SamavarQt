@@ -4,7 +4,7 @@
 
 #ifndef SAMAVAR_MYTIME_H
 #define SAMAVAR_MYTIME_H
-
+#include <QTime>
 
 class MyTime {
 protected:
@@ -25,8 +25,9 @@ public:
 
 
     //----------Others----------
-    //TODO operator overlaoading = here
-    static MyTime nowTime(); //TODO returns systems hour
+    //Done operator overlaoading = here
+    MyTime operator = (MyTime target);
+    static MyTime nowTime(); //Done returns systems hour
     int howManyMin(MyTime t);
 };
 

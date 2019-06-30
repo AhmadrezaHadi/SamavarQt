@@ -118,11 +118,59 @@ int MyDate::numberOfDay(int monthNumber, int year) {
         return (31);
 }
 
+int MyDate::countLeapYears(MyDate d)
+{
+        int years = d.year;
 
+        // Check if the current year needs to be considered
+        // for the count of leap years or not
+        if (d.month <= 2)
+            years--;
+
+        // An year is a leap year if it is a multiple of 4,
+        // multiple of 400 and not a multiple of 100.
+        return years / 4 - years / 100 + years / 400;
+}
 int MyDate::howManyDay(MyDate d) {
-    return 0;
+
+
+       // initialize count using years and day
+       long int n1 = year*365 + day;
+
+       // Add days for months in given date
+       for (int i=0; i<month - 1; i++)
+           n1 += monthDays[i];
+
+       // Since every leap year is of 366 days,
+       // Add a day for every leap year
+       n1 += countLeapYears(*this);
+
+       // SIMILARLY, COUNT TOTAL NUMBER OF DAYS BEFORE 'dt2'
+
+       long int n2 = d.year*365 + d.day;
+       for (int i=0; i<d.month - 1; i++)
+           n2 += monthDays[i];
+       n2 += countLeapYears(d);
+
+       // return difference between two counts
+       return (n2 - n1);
 }
 
-MyDate MyDate::nowDate() {
-    return MyDate();
+
+ MyDate MyDate::nowDate() {
+    time_t now = time(0);
+    MyDate thisDate;
+    char* dt = ctime(&now);
+    tm *gmtm = gmtime(&now);
+    thisDate.day=gmtm->tm_mday;
+    thisDate.month = gmtm->tm_mon + 1 ;
+    thisDate.year = gmtm->tm_year + 1900;
+    return thisDate;
 }
+ MyDate MyDate::operator =(MyDate NewDate)
+ {
+     this->day=NewDate.day;
+     this->month=NewDate.month;
+     this->year=NewDate.year;
+     return *this;
+ }

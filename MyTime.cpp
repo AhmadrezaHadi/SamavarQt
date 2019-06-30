@@ -28,9 +28,20 @@ int MyTime::getMin() const {
 int MyTime::getHour() const {
     return hour;
 }
+MyTime MyTime::operator =(MyTime target)
+{
+    this->hour = target.hour ;
+    this->min = target.min ;
+    return *this;
+}
 
 MyTime MyTime::nowTime() {
-    return MyTime();
+    QTime time = QTime::currentTime();
+    MyTime mytime;
+    mytime.hour = time.hour() ;
+    mytime.min = time.minute();
+
+    return mytime;
 }
 
 int MyTime::howManyMin(MyTime t) {

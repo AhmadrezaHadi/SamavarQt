@@ -43,11 +43,13 @@ public:
 
 
     //------------Others----------------------
-    void addTeamToTour(int TeamId);//Todo dorstesh kon dige tozih midam barat
-    void deleteTeamFromTour(int TeamId);//todo hamasho hazf kon
+    void addTeamToTour(int TeamId);//Done dorstesh kon dige tozih midam barat
+    void deleteTeamFromTour(int TeamId);//Done hamasho hazf kon
     void changeMatchTime(int matchId,MyDate d,MyTime t);
-    //TODO func bezan ke vec az match haye ye team ba gereftan ID ish bar gardoone
-    //TODO func bezan ke ye vec begire az match ha va overwrite kone roo match haye asli
+    QVector<Match<T>> matchesOfTeam(int TeamId);
+    //Done func bezan ke vec az match haye ye team ba gereftan ID ish bar gardoone
+    void updateMatch(QVector<Match<T>> match);
+    //Done func bezan ke ye vec begire az match ha va overwrite kone roo match haye asli
 
 };
 
