@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMessageBox>
+
 namespace Ui {
 class Login;
 }
@@ -12,7 +13,7 @@ class Login : public QWidget
     Q_OBJECT
 
 public:
-    explicit Login(int index , QWidget *parent = 0  );
+    explicit Login(int index, QWidget *parent = 0  );
     ~Login();
 
 private slots:

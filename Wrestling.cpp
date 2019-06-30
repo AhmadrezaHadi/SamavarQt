@@ -19,3 +19,8 @@ Tournament<int> Wrestling::getTourById(int id) const {
 void Wrestling::addTour(Tournament<int> v) {
     tours.push_back(v);
 }
+
+void Wrestling::setTours(QVector<Tournament<int>> t){
+    tours=t;
+}
+

@@ -107,3 +107,13 @@ template<class T>
 T Match<T>::getSecondTeamResult() const {
     return secondTeam.second;
 }
+
+template<class T>
+void Match<T>::setID(int id){
+    ID=id;
+}
+
+template<class T>
+int Match<T>::getId(){
+    return ID;
+}

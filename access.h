@@ -9,8 +9,10 @@
 #include "PingPong.h"
 #include "Wrestling.h"
 
-BBVB &bbvb=BBVB::getInstance();
 PingPong &pp=PingPong::getInstance();
+BBVB &bbvb=BBVB::getInstance();
 Wrestling &wr=Wrestling::getInstance();
+
+
 
 #endif //SAMAVAR_ACCESS_H

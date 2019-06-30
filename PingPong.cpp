@@ -20,3 +20,7 @@ Tournament<PPResult> PingPong::getTourById(int id) const {
 void PingPong::addTour(Tournament<PPResult> v) {
     tours.push_back(v);
 }
+
+void PingPong::setTours(QVector<Tournament<PPResult>> t){
+    tours=t;
+}

@@ -39,8 +39,10 @@ public:
     void setSecondTeamId(int id);
     void setFirstTeamResult(T r);
     void setSecondTeamResult(T r);
+    void setID(int id);
 
     //------------Getter-----------------
+    int getId();
     MyDate getHoldingDate() const;
     MyTime getStartTime() const;
     MyTime getEndTime() const;

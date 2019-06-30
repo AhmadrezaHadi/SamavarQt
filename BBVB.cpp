@@ -19,3 +19,8 @@ Tournament<VBResult> BBVB::getTourById(int id) const {
 void BBVB::addTour(Tournament<VBResult> v) {
     tours.push_back(v);
 }
+
+void BBVB::setTours(QVector<Tournament<VBResult>> t){
+    tours=t;
+}
+

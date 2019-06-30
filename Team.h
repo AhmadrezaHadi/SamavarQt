@@ -27,11 +27,12 @@ public:
     void setUsername(QString user);
     void setPassword(QString pass);
     void setScore(int scr);
-
+    void setID(int id);
 
     //----------------Getter----------------------------
     QString getTeamName() const;
     QString getUsername() const;
+    QString getPassword() const;
     int getScore() const;
     int getID() const;
     QVector<Person> getMembers() const;

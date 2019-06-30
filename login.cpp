@@ -23,7 +23,11 @@ void Login::on_tabWidget_tabCloseRequested(int index)
 void Login::on_loginButton_clicked()
 {
     bbvb.setUsername("1");
-    bbvb.setPassword("1");
+    bbvb.setPassword("3");
+    pp.setUsername("1");
+    pp.setPassword("2");
+    wr.setPassword("1");
+    wr.setUsername("1");
     QString username = ui->lineEditUsername->text();
     QString password = ui->lineEditPassword->text();
     if(Index == 0)
@@ -50,30 +54,6 @@ void Login::on_loginButton_clicked()
     }
     else if(Index == 1)
     {
-        wr.setPassword("1");
-        wr.setPassword("2");
-        if(username == wr.getUsername())
-        {
-            if(password == wr.getPassword())
-            {
-                //TODO hashesh kon daius
-                QMessageBox* msg = new QMessageBox;
-                msg->setText("Login Successful :)!");
-                msg->exec();
-                //ui->tabWidget->addTab()//TODO Pornesh injas .|.
-            }else{
-                QMessageBox* msg = new QMessageBox;
-                msg->setText("Wrong password, try again.");
-                msg->exec();
-            }
-        }else {
-            QMessageBox* msg = new QMessageBox;
-            msg->setText("Wrong Username, try again.");
-            msg->exec();
-        }
-    }
-    else if(Index == 2)
-    {
         if(username == pp.getUsername())
         {
             if(password == pp.getPassword())
@@ -94,11 +74,11 @@ void Login::on_loginButton_clicked()
             msg->exec();
         }
     }
-    else if(Index == 3)
+    else if(Index == 2)
     {
-        if(username == bbvb.getUsername())
+        if(username == wr.getUsername())
         {
-            if(password == bbvb.getPassword())
+            if(password == wr.getPassword())
             {
                 //TODO hashesh kon daius
                 QMessageBox* msg = new QMessageBox;
@@ -116,6 +96,5 @@ void Login::on_loginButton_clicked()
             msg->exec();
         }
     }
-
 
 }

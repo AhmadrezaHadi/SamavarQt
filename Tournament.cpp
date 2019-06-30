@@ -72,3 +72,24 @@ void Tournament<T>::addTeamToTour(int TeamId) {
     }
 }
 
+template<class T>
+QVector<int> Tournament<T>::getTeamIDs(){
+    return teamIDs;
+}
+template<class T>
+void Tournament<T>::setMatches(QVector<Match<T>> m){
+    matches=m;
+}
+
+
+template<class T>
+void Tournament<T>::setTeamIDs(QVector<int> t){
+    teamIDs=t;
+}
+
+template<class T>
+void Tournament<T>::setID(int id){
+    ID=id;
+}
+
+

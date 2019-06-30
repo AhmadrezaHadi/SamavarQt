@@ -8,7 +8,7 @@
 #include <QString>
 #include <QVector>
 #include "MyDate.h"
-#include "Match.h"
+#include "Match.cpp"
 
 
 template <class T>
@@ -30,12 +30,16 @@ public:
     void setTourStartDate(int year,int month,int day);
     void SetTourEndDate(MyDate d);
     void SetTourEndDate(int year,int month,int day);
+    void setMatches(QVector<Match<T>> m);
+    void setTeamIDs(QVector<int> t);
+    void setID(int id);
 
     //-------------Getter---------------------
     MyDate getTourStartDate() const;
     MyDate getTourEndDate() const;
     int getTourId() const;
     QVector<Match<T>> getTourMatches() const;
+    QVector<int> getTeamIDs();
 
 
     //------------Others----------------------

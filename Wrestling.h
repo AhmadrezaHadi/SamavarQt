@@ -23,6 +23,7 @@ public:
 
 
     //-------------Setter------------
+    void setTours(QVector<Tournament<int>> t);
 
     //------------Getter-------------
     QVector<Tournament<int>> getTours() const;

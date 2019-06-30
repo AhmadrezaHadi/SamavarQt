@@ -35,6 +35,8 @@ public:
 
 
     //-------------Setter------------
+    void setTours(QVector<Tournament<VBResult>> t);
+
 
     //------------Getter-------------
     QVector<Tournament<VBResult>> getTours() const;

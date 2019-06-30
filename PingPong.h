@@ -29,6 +29,7 @@ public:
 
 
     //-------------Setter------------
+    void setTours(QVector<Tournament<PPResult>> t);
 
     //------------Getter-------------
     QVector<Tournament<PPResult>> getTours() const;

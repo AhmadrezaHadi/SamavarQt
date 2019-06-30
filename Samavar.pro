@@ -24,41 +24,45 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-        BBVB.cpp \
-        Match.cpp \
         MyDate.cpp \
         MyTime.cpp \
         Person.cpp \
-        PingPong.cpp \
-        Sport.cpp \
-        StoreAndRestore.cpp \
+        Match.cpp \
         Team.cpp \
         Tournament.cpp \
+        Sport.cpp \
+        BBVB.cpp \
+        PingPong.cpp \
         Wrestling.cpp \
-    login.cpp
+        StoreAndRestore.cpp \
+        mainwindow.cpp \
+        main.cpp \
+        login.cpp \
+        teamlogin.cpp
 
 HEADERS += \
-        mainwindow.h \
-        access.h \
-        BBVB.h \
-        Match.h \
         MyDate.h \
         MyTime.h \
         Person.h \
-        PingPong.h \
+        Match.h \
         Sport.h \
-        StoreAndRestore.h \
         Team.h \
         Tournament.h \
+        shit.h \
+        BBVB.h \
+        PingPong.h \
         Wrestling.h \
-    shit.h \
-    login.h
+        access.h \
+        StoreAndRestore.h \
+        mainwindow.h \
+        login.h \
+        teamlogin.h \
+    access2.h
 
 FORMS += \
         mainwindow.ui \
-    login.ui
+    login.ui \
+    teamlogin.ui
 
 DISTFILES += \
     ReadME.pdf \

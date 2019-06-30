@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "teamlogin.h"
 #include "login.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -39,8 +39,7 @@ void MainWindow::on_wrLoginButton_clicked()
 
 void MainWindow::on_teamLoginButton_clicked()
 {
-
-    Login* loginPage = new Login(3);
+    teamLogin* loginPage = new teamLogin;
     loginPage->show();
     hide();
 }

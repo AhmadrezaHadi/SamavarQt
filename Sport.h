@@ -16,8 +16,8 @@ protected:
     Person host;
     QString username;
     QString password;
-    QVector<Team> teams;
     bool firstTime=true;
+    QVector<Team> teams;
 public:
 
 //-----------Constructor---------------

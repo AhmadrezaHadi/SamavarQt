@@ -42,6 +42,10 @@ QString Team::getUsername() const {
     return this->username;
 }
 
+QString Team::getPassword() const{
+    return this->password;
+}
+
 int Team::getScore() const {
     return score;
 }
@@ -106,4 +110,8 @@ void Team::deletePerson(QString natCode) {
         }
     }
 
+}
+
+void Team::setID(int id){
+    this->ID=id;
 }
