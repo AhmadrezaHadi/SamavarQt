@@ -41,6 +41,7 @@ void teamLogin::on_loginButton_clicked()
     int index = ui->comboBoxSport->currentIndex();
     Team t(username , username , username );
     bbvb.addTeam(t);
+    globalType = index;
     if (index == 0){
         for (int i=0; i < bbvb.getTeams().size(); ++i){
             if (username == bbvb.getTeams()[i].getUsername()){
@@ -49,6 +50,8 @@ void teamLogin::on_loginButton_clicked()
                     msg->setText("Login Successful!");
                     msg->show();
                     ui->tabWidget->removeTab(0);
+                    globalIndex = i;
+                    ui->tabWidget->addTab(ui->mainTab,"login");
 //                    teamsPanel* panel = new teamsPanel(0, bbvb.getTeams()[i]);
 
                 }else{
@@ -104,3 +107,14 @@ void teamLogin::on_loginButton_clicked()
 
 }
 
+
+void teamLogin::on_editTeamPushButton_clicked()
+{
+    if (globalType == 0){
+
+    }else if (globalType == 1){
+
+    }else if (globalType == 2){
+
+    }
+}
