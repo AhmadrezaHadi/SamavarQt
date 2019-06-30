@@ -38,7 +38,8 @@ SOURCES += \
         mainwindow.cpp \
         main.cpp \
         login.cpp \
-        teamlogin.cpp
+        teamlogin.cpp \
+    editmembers.cpp
 
 HEADERS += \
         MyDate.h \
@@ -57,7 +58,8 @@ HEADERS += \
         mainwindow.h \
         login.h \
         teamlogin.h \
-    access2.h
+    access2.h \
+    editmembers.h
 
 FORMS += \
         mainwindow.ui \

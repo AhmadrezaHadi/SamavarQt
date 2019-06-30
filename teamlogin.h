@@ -21,9 +21,12 @@ private slots:
 
 
 
+    void on_editTeamPushButton_clicked();
+
 private:
     Ui::teamLogin *ui;
-
+    int globalIndex;
+    int globalType;
 };
 
 

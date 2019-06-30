@@ -4,6 +4,8 @@
 
 #include "BBVB.h"
 
+
+
 QVector<Tournament<VBResult>> BBVB::getTours() const {
     return tours;
 }
@@ -23,4 +25,3 @@ void BBVB::addTour(Tournament<VBResult> v) {
 void BBVB::setTours(QVector<Tournament<VBResult>> t){
     tours=t;
 }
-
