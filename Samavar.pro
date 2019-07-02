@@ -39,8 +39,9 @@ SOURCES += \
         main.cpp \
         login.cpp \
         teamlogin.cpp \
+    smtp.cpp \
     editmembers.cpp \
-    smtp.cpp
+    editperson.cpp
 
 HEADERS += \
         MyDate.h \
@@ -60,13 +61,15 @@ HEADERS += \
         login.h \
         teamlogin.h \
     access2.h \
+    smtp.h \
     editmembers.h \
-    smtp.h
+    editperson.h
 
 FORMS += \
         mainwindow.ui \
     login.ui \
-    teamlogin.ui
+    teamlogin.ui \
+    editperson.ui
 
 DISTFILES += \
     ReadME.pdf \

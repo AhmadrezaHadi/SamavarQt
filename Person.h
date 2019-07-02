@@ -29,6 +29,7 @@ public:
     void setNationalCode(QString natcode);
 
     //------------Getter---------------
+    QString getName() const;
     QString getFirstName() const;
     QString getLastName() const;
     bool getGender() const;

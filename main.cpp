@@ -16,6 +16,32 @@ int main(int argc, char *argv[])
 //    Start(bbvb);
 //    Start(wr);
 //    Start(pp);
+
+//    BBVB & bbvb = BBVB::getInstance();
+
+//    QString firstName = "hi";
+//    QString lastName = "fuck this shit";
+//    QString nationalCode = "12345";
+//    bool gender = true;
+
+//    QVector<Team> allTeams = bbvb.getTeams();
+//    QVector<Person> allPersons = allTeams[0].getMembers();
+//    allPersons[0].setFirstName(firstName);
+//    allPersons[0].setLasName(lastName);
+//    allPersons[0].setNationalCode(nationalCode);
+//    allPersons[0].setGender(gender);
+
+//    Team temp;
+//    for (int i = 0; i < allPersons.size(); ++i){
+//        temp.addPerson(allPersons[i]);
+//    }
+
+//    allTeams[0] = temp;
+
+//    bbvb.setTeams(allTeams);
+
+//    //Update(bbvb);
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

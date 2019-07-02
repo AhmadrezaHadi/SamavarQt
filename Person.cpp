@@ -31,6 +31,14 @@ void Person::setNationalCode(QString natcode) {
     nationalCode = natcode;
 }
 
+QString Person::getName() const
+{
+    QString temp = getFirstName();
+    temp += " ";
+    temp += getLastName();
+    return temp;
+}
+
 QString Person::getFirstName() const {
     return firstName;
 }

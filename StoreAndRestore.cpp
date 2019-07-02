@@ -38,7 +38,7 @@ void makeJson(QJsonDocument &jsdoc,const BBVB &b){
 
         //--------------------------
         QJsonArray persons;
-        for(int j=0;b.getTeams()[i].getMembers().size();i++){
+        for(int j=0;j<b.getTeams()[i].getMembers().size();j++){
             QJsonObject person;
             person.insert(QString("firstName"),QJsonValue(b.getTeams()[i].getMembers()[j].getFirstName()));
             person.insert(QString("lastName"),QJsonValue(b.getTeams()[i].getMembers()[j].getLastName()));
@@ -335,7 +335,7 @@ void makeJson(QJsonDocument &jsdoc,const PingPong &b){
 
         //--------------------------
         QJsonArray persons;
-        for(int j=0;b.getTeams()[i].getMembers().size();i++){
+        for(int j=0;j<b.getTeams()[i].getMembers().size();j++){
             QJsonObject person;
             person.insert(QString("firstName"),QJsonValue(b.getTeams()[i].getMembers()[j].getFirstName()));
             person.insert(QString("lastName"),QJsonValue(b.getTeams()[i].getMembers()[j].getLastName()));
@@ -624,7 +624,7 @@ void makeJson(QJsonDocument &jsdoc,const Wrestling &b){
 
         //--------------------------
         QJsonArray persons;
-        for(int j=0;b.getTeams()[i].getMembers().size();i++){
+        for(int j=0;j<b.getTeams()[i].getMembers().size();j++){
             QJsonObject person;
             person.insert(QString("firstName"),QJsonValue(b.getTeams()[i].getMembers()[j].getFirstName()));
             person.insert(QString("lastName"),QJsonValue(b.getTeams()[i].getMembers()[j].getLastName()));

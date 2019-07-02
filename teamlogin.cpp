@@ -3,6 +3,7 @@
 #include "ui_teamlogin.h"
 #include "BBVB.h"
 #include "Wrestling.h"
+#include "editmembers.h"
 #include "PingPong.h"
 #include "Team.h"
 teamLogin::teamLogin( QWidget *parent) :
@@ -40,6 +41,8 @@ void teamLogin::on_loginButton_clicked()
     QString password = ui->lineEditPassword->text();
     int index = ui->comboBoxSport->currentIndex();
     Team t(username , username , username );
+    Person p("1" , "1" , 0 ,"1234");
+    t.addPerson(p);
     bbvb.addTeam(t);
     globalType = index;
     if (index == 0){
@@ -49,11 +52,13 @@ void teamLogin::on_loginButton_clicked()
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Login Successful!");
                     msg->show();
-                    ui->tabWidget->removeTab(0);
-                    globalIndex = i;
-                    ui->tabWidget->addTab(ui->mainTab,"login");
-//                    teamsPanel* panel = new teamsPanel(0, bbvb.getTeams()[i]);
 
+                    ui->tabWidget->removeTab(0);
+
+                    globalIndex = i;
+
+                    ui->tabWidget->addTab(ui->mainTab,"login");
+                    ui->teamPanelLabel->setText("Welcome " + bbvb.getTeams()[i].getTeamName() + " !");
                 }else{
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Wrong password, try again.");
@@ -72,7 +77,8 @@ void teamLogin::on_loginButton_clicked()
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Login Successful!");
                     msg->show();
-                    //pornesh injas
+
+                    //TODO complete here 1 for pingpong
                 }else {
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Wrong password, try again.");
@@ -88,17 +94,17 @@ void teamLogin::on_loginButton_clicked()
         for (int i = 0; i < wr.getTeams().size(); ++i){
             if (username == wr.getTeams()[i].getUsername()){
                 if (password == wr.getTeams()[i].getPassword()){
-                    QMessageBox* msg = new QMessageBox;
+                    QMessageBox * msg = new QMessageBox;
                     msg->setText("Login Succesfull.");
                     msg->show();
-                    //Pornesh injas
+                    //TODO complete here 2 for wr
                 }else{
-                    QMessageBox* msg = new QMessageBox;
+                    QMessageBox * msg = new QMessageBox;
                     msg->setText("Wrong password, try again.");
                     msg->show();
                 }
             }else{
-                QMessageBox* msg = new QMessageBox;
+                QMessageBox * msg = new QMessageBox;
                 msg->setText("Wrong username, try again.");
                 msg->show();
             }
@@ -110,11 +116,17 @@ void teamLogin::on_loginButton_clicked()
 
 void teamLogin::on_editTeamPushButton_clicked()
 {
-    if (globalType == 0){
-
+    if (globalType == 0){ //bbvb with team of index globalIndex
+        editMembers * editDiag = new editMembers(0,globalIndex);
+        editDiag->show();
     }else if (globalType == 1){
-
+        //TODO complete here
     }else if (globalType == 2){
-
+        //TODO complete here
     }
+}
+
+void teamLogin::on_allTeamsPushButton_clicked()
+{
+
 }

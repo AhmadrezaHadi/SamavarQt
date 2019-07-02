@@ -55,7 +55,6 @@ int Team::getID() const {
 }
 
 QVector<Person> Team::getMembers() const {
-
     return members;
 }
 
