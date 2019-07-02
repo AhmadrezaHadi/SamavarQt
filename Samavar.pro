@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -39,7 +39,8 @@ SOURCES += \
         main.cpp \
         login.cpp \
         teamlogin.cpp \
-    editmembers.cpp
+    editmembers.cpp \
+    smtp.cpp
 
 HEADERS += \
         MyDate.h \
@@ -59,7 +60,8 @@ HEADERS += \
         login.h \
         teamlogin.h \
     access2.h \
-    editmembers.h
+    editmembers.h \
+    smtp.h
 
 FORMS += \
         mainwindow.ui \
