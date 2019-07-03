@@ -25,6 +25,8 @@ public:
 private:
     QListWidget *membersList;
     BBVB & bbvb = BBVB::getInstance();
+    PingPong & pp = PingPong::getInstance();
+    Wrestling & wr = Wrestling::getInstance();
 
 private slots:
 

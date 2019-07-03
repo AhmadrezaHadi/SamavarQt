@@ -1,6 +1,9 @@
 #include "login.h"
 #include "ui_login.h"
 #include "access.h"
+#include "adminspanel.h"
+#include "encrypt.h"
+
 Login::Login(int index , QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Login)
@@ -23,24 +26,27 @@ void Login::on_tabWidget_tabCloseRequested(int index)
 void Login::on_loginButton_clicked()
 {
     bbvb.setUsername("1");
-    bbvb.setPassword("3");
+    bbvb.setPassword(incrypt::encryption("1"));
     pp.setUsername("1");
-    pp.setPassword("2");
+    pp.setPassword(incrypt::encryption("1"));
     wr.setPassword("1");
-    wr.setUsername("1");
+    wr.setUsername(incrypt::encryption("1"));
     QString username = ui->lineEditUsername->text();
     QString password = ui->lineEditPassword->text();
     if(Index == 0)
     {
         if(username == bbvb.getUsername())
         {
-            if(password == bbvb.getPassword())
+            if(incrypt::encryption(password) == bbvb.getPassword())
             {
-                //TODO hashesh kon daius
+
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();
                 //ui->tabWidget->addTab()//TODO Pornesh injas .|.
+                adminsPanel * adminPanel = new adminsPanel(0);
+                adminPanel->exec();
+                hide();
             }else{
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Wrong password, try again.");
@@ -56,9 +62,9 @@ void Login::on_loginButton_clicked()
     {
         if(username == pp.getUsername())
         {
-            if(password == pp.getPassword())
+            if(incrypt::encryption(password) == pp.getPassword())
             {
-                //TODO hashesh kon daius
+
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();
@@ -78,9 +84,9 @@ void Login::on_loginButton_clicked()
     {
         if(username == wr.getUsername())
         {
-            if(password == wr.getPassword())
+            if(incrypt::encryption(password) == wr.getPassword())
             {
-                //TODO hashesh kon daius
+
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();

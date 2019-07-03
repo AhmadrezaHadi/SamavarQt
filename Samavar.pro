@@ -43,7 +43,12 @@ SOURCES += \
     editmembers.cpp \
     editperson.cpp \
     allteamsdialog.cpp \
-    teamsdetaildialog.cpp
+    teamsdetaildialog.cpp \
+    adminspanel.cpp \
+    adminteamspaneldialog.cpp \
+    addnewteamdiag.cpp \
+    addpersontoteamdiag.cpp \
+    encrypt.cpp
 
 HEADERS += \
         MyDate.h \
@@ -67,13 +72,21 @@ HEADERS += \
     editmembers.h \
     editperson.h \
     allteamsdialog.h \
-    teamsdetaildialog.h
+    teamsdetaildialog.h \
+    adminspanel.h \
+    adminteamspaneldialog.h \
+    addnewteamdiag.h \
+    addpersontoteamdiag.h \
+    encrypt.h
 
 FORMS += \
         mainwindow.ui \
     login.ui \
     teamlogin.ui \
-    editperson.ui
+    editperson.ui \
+    adminspanel.ui \
+    addnewteamdiag.ui \
+    addpersontoteamdiag.ui
 
 DISTFILES += \
     ReadME.pdf \
