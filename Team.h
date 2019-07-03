@@ -29,6 +29,7 @@ public:
     void setScore(int scr);
     void setID(int id);
 
+
     //----------------Getter----------------------------
     QString getTeamName() const;
     QString getUsername() const;
@@ -47,6 +48,7 @@ public:
     void changeLastName(QString natCode,QString last);
     void changeGender(QString natCode,bool gen);
     void deletePerson(QString natCode);
+    void editPerson(Person p , int index);
 
 };
 

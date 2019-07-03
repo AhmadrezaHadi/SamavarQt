@@ -51,14 +51,22 @@ void editPerson::on_editButton_clicked()
         allPersons[personIndex].setGender(gender);
 
         Team temp;
+        temp.setID(bbvb.getTeams()[globalIndex].getID());
+        temp.setPassword(bbvb.getTeams()[globalIndex].getPassword());
+        temp.setScore(bbvb.getTeams()[globalIndex].getScore());
+        temp.setTeamName(bbvb.getTeams()[globalIndex].getTeamName());
+        temp.setUsername(bbvb.getTeams()[globalIndex].getUsername());
+
         for (int i = 0; i < allPersons.size(); ++i){
             temp.addPerson(allPersons[i]);
         }
+
         allTeams[globalIndex] = temp;
 
         bbvb.setTeams(allTeams);
 
         ::Update(bbvb);
+
     }else if (globalIndex == 1){
         //TODO complete here
     }else if (globalIndex == 2){

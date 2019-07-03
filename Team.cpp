@@ -111,6 +111,11 @@ void Team::deletePerson(QString natCode) {
 
 }
 
+void Team::editPerson(Person p, int index)
+{
+    members[index]=p;
+}
+
 void Team::setID(int id){
     this->ID=id;
 }

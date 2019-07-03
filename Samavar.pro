@@ -41,7 +41,9 @@ SOURCES += \
         teamlogin.cpp \
     smtp.cpp \
     editmembers.cpp \
-    editperson.cpp
+    editperson.cpp \
+    allteamsdialog.cpp \
+    teamsdetaildialog.cpp
 
 HEADERS += \
         MyDate.h \
@@ -63,7 +65,9 @@ HEADERS += \
     access2.h \
     smtp.h \
     editmembers.h \
-    editperson.h
+    editperson.h \
+    allteamsdialog.h \
+    teamsdetaildialog.h
 
 FORMS += \
         mainwindow.ui \

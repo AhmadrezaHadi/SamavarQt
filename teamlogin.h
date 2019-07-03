@@ -23,6 +23,8 @@ private slots:
 
     void on_editTeamPushButton_clicked();
 
+    void on_allTeamsPushButton_clicked();
+
 private:
     Ui::teamLogin *ui;
     int globalIndex;

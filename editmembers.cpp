@@ -41,7 +41,7 @@ editMembers::~editMembers()
 
 void editMembers::editButtonPressed()
 {
-    personIndex = membersList->currentIndex().column();
+    personIndex = membersList->currentRow();
     editPerson * editTab = new editPerson(globalType, globalIndex, personIndex);
     editTab->show();
 

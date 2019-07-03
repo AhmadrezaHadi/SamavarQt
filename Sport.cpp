@@ -66,6 +66,26 @@ const QVector<Team> &Sport::getTeams() const {
     return teams;
 }
 
+Team Sport::sortTeams(Team t)
+{
+    Person temp;
+    for(int i=0;i<t.getMembers().size();i++)
+    {
+        for(int j=0;j<t.getMembers().size();j++)
+        {
+            if(t.getMembers()[i].getFirstName() > t.getMembers()[j].getFirstName() )
+            {
+                temp=t.getMembers()[i];
+                t.editPerson(t.getMembers()[j] , i);
+                t.editPerson(temp , j);
+            }
+        }
+    }
+    return t;
+
+}
+
+
 bool Sport::isFirstTime() const {
     return firstTime;
 }

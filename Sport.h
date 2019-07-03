@@ -51,7 +51,7 @@ public:
 
     //---------------Others------------------
     void addTeam(Team t);
-
+    Team sortTeams(Team t);
 
 
     //-------------
