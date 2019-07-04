@@ -26,9 +26,11 @@ private slots:
     void addTeamButtonPressed();
     void teamDetailsButtonPressed();
     void globalRankingButtonPressed();
-
+    void closeButtonClicked();
 private:
     int globalIndex;
+
+    QListWidget * allTeams;
 
     BBVB & bbvb = BBVB::getInstance();
     Wrestling & wr = Wrestling::getInstance();

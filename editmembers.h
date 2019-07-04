@@ -6,6 +6,8 @@
 #include <QPushButton>
 #include <QDialog>
 #include <QListWidget>
+#include <QLineEdit>
+#include <QLabel>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -20,12 +22,13 @@ class editMembers : public QDialog
     Q_OBJECT
 
 public:
-    explicit editMembers(int type, int index, QWidget *parent = 0);
+    explicit editMembers(int type, int index, bool adminAccess = true, QWidget *parent = 0);
     ~editMembers();
 
 private slots:
     void editButtonPressed();
-
+    void editTeamButtonPressed();
+    void applyButtonPressed();
 
 private:
     QListWidget * membersList;
@@ -33,6 +36,19 @@ private:
     BBVB & bbvb = BBVB::getInstance();
     Wrestling & wr = Wrestling::getInstance();
     PingPong & pp = PingPong::getInstance();
+
+    QDialog * editTeamDiag;
+    QLineEdit * usernameLineEdit;
+    QLabel * usernameLabel;
+    QLineEdit * passwordLineEdit;
+    QLabel * passwordLabel;
+    QLabel * teamIDLabel;
+    QLineEdit * teamIDLineEdit;
+    QLabel * teamNameLabel;
+    QLineEdit * teamNameLineEdit;
+    QLabel * scoreLabel;
+    QLineEdit * scoreLineEdit;
+    QPushButton * applyButton;
 
     int globalType;
     int globalIndex;

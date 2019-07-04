@@ -20,6 +20,10 @@ private slots:
 
     void on_teamsPanelButton_clicked();
 
+    void on_exitButton_clicked();
+
+    void on_logOutButton_clicked();
+
 private:
     int globalIndex;
     Ui::adminsPanel *ui;

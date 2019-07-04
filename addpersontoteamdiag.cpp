@@ -3,7 +3,7 @@
 #include "StoreAndRestore.h"
 
 addPersonToTeamDiag::addPersonToTeamDiag(int type, QWidget *parent) :
-    QDialog(parent),
+    QDialog(parent, Qt::FramelessWindowHint),
     ui(new Ui::addPersonToTeamDiag)
 {
     ui->setupUi(this);

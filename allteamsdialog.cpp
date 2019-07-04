@@ -6,9 +6,9 @@ allTeamsDialog::allTeamsDialog(int type, QWidget *parent) :
 {
     globalType = type;
 
+    allTeamsList = new QListWidget;
 
     QPushButton * selectTeamButton = new QPushButton;
-    allTeamsList = new QListWidget;
     QVBoxLayout * vBox = new QVBoxLayout;
 
     selectTeamButton->setText("Select Team");
@@ -43,7 +43,7 @@ allTeamsDialog::~allTeamsDialog()
 void allTeamsDialog::selectTeamButtonPressed()
 {
     QString  index = allTeamsList->currentItem()->text();
-    qDebug()<< index;
+    //qDebug()<< index;
     teamsDetailDialog * selectedTeamDiag = new teamsDetailDialog(globalType, index);
     selectedTeamDiag->show();
 }

@@ -45,8 +45,9 @@ void Login::on_loginButton_clicked()
                 msg->exec();
                 //ui->tabWidget->addTab()//TODO Pornesh injas .|.
                 adminsPanel * adminPanel = new adminsPanel(0);
+                this->close();
                 adminPanel->exec();
-                hide();
+
             }else{
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Wrong password, try again.");

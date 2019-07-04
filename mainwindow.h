@@ -22,6 +22,8 @@ private slots:
 
     void on_teamLoginButton_clicked();
 
+    void on_exitButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

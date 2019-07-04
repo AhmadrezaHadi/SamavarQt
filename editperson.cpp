@@ -9,7 +9,6 @@ editPerson::editPerson(int type, int index, int personIndex, QWidget *parent) :
     ui(new Ui::editPerson)
 {
 
-   // bbvb.getTeams()[0].addPerson(p);
     this->globalIndex = index;
     globalType = type;
     this->personIndex = personIndex;
