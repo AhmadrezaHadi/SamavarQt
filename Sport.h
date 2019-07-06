@@ -18,6 +18,11 @@ protected:
     QString password;
     bool firstTime=true;
     QVector<Team> teams;
+
+
+    void swap(Team *xp, Team *yp);
+
+
 public:
 
 //-----------Constructor---------------
@@ -52,6 +57,8 @@ public:
     //---------------Others------------------
     void addTeam(Team t);
     Team sortTeams(Team t);
+    QVector<Team> sortedByRank();
+
 
 
     //-------------

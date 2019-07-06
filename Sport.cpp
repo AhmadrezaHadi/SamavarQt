@@ -15,6 +15,7 @@ Sport::Sport(Person &host, QString &user, QString &pass) {
     this->password = pass;
 }
 
+
 Sport::Sport(QString &first, QString &last, bool gen, QString &natCode, QString &user, QString &pass) {
     Person p(first, last, gen, natCode);
     host = p;
@@ -22,6 +23,17 @@ Sport::Sport(QString &first, QString &last, bool gen, QString &natCode, QString 
     password = pass;
 
 }
+
+
+void Sport::swap(Team *xp, Team *yp)
+{
+        Team temp = *xp;
+        *xp = *yp;
+        *yp = temp;
+}
+
+
+
 
 //-----------------------------Setter--------------------
 
@@ -83,6 +95,20 @@ Team Sport::sortTeams(Team t)
     }
     return t;
 
+}
+
+QVector<Team> Sport::sortedByRank()
+{
+
+    QVector<Team> allTeams = getTeams();
+    int i, j;
+    for (i = 0; i < allTeams.size()-1; i++)
+        for (j = 0; j < allTeams.size()-i-1; j++)
+            if (allTeams[j].getScore() < allTeams[j+1].getScore())
+               swap(&allTeams[j], &allTeams[j+1]);
+
+
+    return allTeams;
 }
 
 

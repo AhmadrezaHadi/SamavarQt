@@ -43,7 +43,7 @@ void Login::on_loginButton_clicked()
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();
-                //ui->tabWidget->addTab()//TODO Pornesh injas .|.
+                //ui->tabWidget->addTab()
                 adminsPanel * adminPanel = new adminsPanel(0);
                 this->close();
                 adminPanel->exec();
@@ -69,7 +69,10 @@ void Login::on_loginButton_clicked()
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();
-                //ui->tabWidget->addTab()//TODO Pornesh injas .|.
+
+                adminsPanel * adminPanel = new adminsPanel(1);
+                this->close();
+                adminPanel->exec();
             }else{
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Wrong password, try again.");
@@ -91,7 +94,11 @@ void Login::on_loginButton_clicked()
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Login Successful :)!");
                 msg->exec();
-                //ui->tabWidget->addTab()//TODO Pornesh injas .|.
+
+                adminsPanel * adminPanel = new adminsPanel(2);
+                this->close();
+                adminPanel->exec();
+
             }else{
                 QMessageBox* msg = new QMessageBox;
                 msg->setText("Wrong password, try again.");

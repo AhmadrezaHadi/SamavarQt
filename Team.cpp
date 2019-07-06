@@ -4,14 +4,16 @@
 
 #include "Team.h"
 
+
 Team::Team() {
 
 }
 
-Team::Team(QString &name, QString &username, QString &password) {
+Team::Team(QString &name, QString &username, QString &password, int score) {
     teamName = name;
     this->username = username;
     this->password = password;
+    this->score = score;
 }
 
 //----------------------------Setter------------------------
@@ -115,6 +117,8 @@ void Team::editPerson(Person p, int index)
 {
     members[index]=p;
 }
+
+
 
 void Team::setID(int id){
     this->ID=id;

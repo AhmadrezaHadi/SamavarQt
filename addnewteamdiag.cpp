@@ -3,6 +3,7 @@
 #include "addpersontoteamdiag.h"
 #include "StoreAndRestore.h"
 #include "encrypt.h"
+#include <QDebug>
 
 addNewTeamDiag::addNewTeamDiag(int index, QWidget *parent) :
     QDialog(parent),
@@ -26,11 +27,26 @@ void addNewTeamDiag::on_addPersonButton_clicked()
     QString password = incrypt::encryption(passwordTemp);
     int score = ui->scoreLineEdit->text().toDouble();
 
-    Team temp(name, username, password);
-    bbvb.addTeam(temp);
-    ::Update(bbvb);
+
+
+    Team temp(name, username, password, score);
+    temp.setID(ID);
+
+
+    if(globalIndex == 0){
+        bbvb.addTeam(temp);
+        ::Update(bbvb);
+    }else if (globalIndex == 1){
+        pp.addTeam(temp);
+        ::Update(pp);
+    }else if (globalIndex == 2){
+        wr.addTeam(temp);
+        ::Update(wr);
+    }
+
+
     this->close();
-    addPersonToTeamDiag * addPerson = new addPersonToTeamDiag(globalIndex);
+    addPersonToTeamDiag * addPerson = new addPersonToTeamDiag(globalIndex, username, passwordTemp);
     addPerson->exec();
 
 

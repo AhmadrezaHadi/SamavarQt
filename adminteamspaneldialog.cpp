@@ -1,6 +1,7 @@
 #include "adminteamspaneldialog.h"
 #include "addnewteamdiag.h"
-#include "teamsdetaildialog.h"
+#include "editmembers.h"
+#include "teamrankingsdialog.h"
 
 adminTeamsPanelDialog::adminTeamsPanelDialog(int index, QWidget *parent) :
     QDialog(parent, Qt::FramelessWindowHint)
@@ -61,18 +62,21 @@ adminTeamsPanelDialog::~adminTeamsPanelDialog()
 void adminTeamsPanelDialog::addTeamButtonPressed()
 {
     addNewTeamDiag * newTeamPanel = new addNewTeamDiag(globalIndex);
+    this->close();
     newTeamPanel->exec();
 }
 
 void adminTeamsPanelDialog::teamDetailsButtonPressed()
 {
-    QString row = allTeams->currentItem()->text();
-    teamsDetailDialog * teamsDetail = new teamsDetailDialog(globalIndex, row);
-    teamsDetail->exec();
+    int index = allTeams->currentRow();
+    editMembers * editTeamPanel = new editMembers(globalIndex, index, true);
+    editTeamPanel->exec();
 }
 
 void adminTeamsPanelDialog::globalRankingButtonPressed()
 {
+    teamRankingsDialog * ranking = new teamRankingsDialog(globalIndex);
+    ranking->exec();
 
 }
 

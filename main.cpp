@@ -10,12 +10,12 @@
 
 int main(int argc, char *argv[])
 {
-//    BBVB &bbvb = BBVB::getInstance();
-//    Wrestling &wr=Wrestling::getInstance();
-//    PingPong &pp=PingPong::getInstance();
-//    Start(bbvb);
-//    Start(wr);
-//    Start(pp);
+    BBVB &bbvb = BBVB::getInstance();
+    //Wrestling &wr=Wrestling::getInstance();
+    //PingPong &pp=PingPong::getInstance();
+    Start(bbvb);
+    //Start(wr);
+    //Start(pp);
 
 //    BBVB & bbvb = BBVB::getInstance();
 

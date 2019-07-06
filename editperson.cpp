@@ -23,9 +23,17 @@ editPerson::editPerson(int type, int index, int personIndex, QWidget *parent) :
         ui->nationalCodeLineEdit->setText(bbvb.getTeams()[index].getMembers()[personIndex].getNationalCode());
         ui->genderComboBox->setCurrentIndex(bbvb.getTeams()[index].getMembers()[personIndex].getGender());
     }else if (type == 1){
-        //TODO complete here
+        //TOO complete here
+        ui->firstNameLineEdit->setText(pp.getTeams()[index].getMembers()[personIndex].getFirstName());
+        ui->lastNameLineEdit->setText(pp.getTeams()[index].getMembers()[personIndex].getLastName());
+        ui->nationalCodeLineEdit->setText(pp.getTeams()[index].getMembers()[personIndex].getNationalCode());
+        ui->genderComboBox->setCurrentIndex(pp.getTeams()[index].getMembers()[personIndex].getGender());
     }else if (type == 2){
-        //TODO complete here
+        //TOO complete here
+        ui->firstNameLineEdit->setText(wr.getTeams()[index].getMembers()[personIndex].getFirstName());
+        ui->lastNameLineEdit->setText(wr.getTeams()[index].getMembers()[personIndex].getLastName());
+        ui->nationalCodeLineEdit->setText(wr.getTeams()[index].getMembers()[personIndex].getNationalCode());
+        ui->genderComboBox->setCurrentIndex(wr.getTeams()[index].getMembers()[personIndex].getGender());
     }
 }
 
@@ -67,9 +75,60 @@ void editPerson::on_editButton_clicked()
         ::Update(bbvb);
 
     }else if (globalIndex == 1){
-        //TODO complete here
+        //TOO complete here
+        QVector<Team> allTeams = pp.getTeams();
+
+        QVector<Person> allPersons = allTeams[globalIndex].getMembers();
+        allPersons[personIndex].setFirstName(firstName);
+        allPersons[personIndex].setLasName(lastName);
+        allPersons[personIndex].setNationalCode(nationalCode);
+        allPersons[personIndex].setGender(gender);
+
+        Team temp;
+        temp.setID(pp.getTeams()[globalIndex].getID());
+        temp.setPassword(pp.getTeams()[globalIndex].getPassword());
+        temp.setScore(pp.getTeams()[globalIndex].getScore());
+        temp.setTeamName(pp.getTeams()[globalIndex].getTeamName());
+        temp.setUsername(pp.getTeams()[globalIndex].getUsername());
+
+        for (int i = 0; i < allPersons.size(); ++i){
+            temp.addPerson(allPersons[i]);
+        }
+
+        allTeams[globalIndex] = temp;
+
+        pp.setTeams(allTeams);
+
+        ::Update(pp);
+
+
     }else if (globalIndex == 2){
-        //TODO complete here
+        //TOO complete here
+        QVector<Team> allTeams = bbvb.getTeams();
+
+        QVector<Person> allPersons = allTeams[globalIndex].getMembers();
+        allPersons[personIndex].setFirstName(firstName);
+        allPersons[personIndex].setLasName(lastName);
+        allPersons[personIndex].setNationalCode(nationalCode);
+        allPersons[personIndex].setGender(gender);
+
+        Team temp;
+        temp.setID(wr.getTeams()[globalIndex].getID());
+        temp.setPassword(wr.getTeams()[globalIndex].getPassword());
+        temp.setScore(wr.getTeams()[globalIndex].getScore());
+        temp.setTeamName(wr.getTeams()[globalIndex].getTeamName());
+        temp.setUsername(wr.getTeams()[globalIndex].getUsername());
+
+        for (int i = 0; i < allPersons.size(); ++i){
+            temp.addPerson(allPersons[i]);
+        }
+
+        allTeams[globalIndex] = temp;
+
+        wr.setTeams(allTeams);
+
+        ::Update(wr);
+
     }
     QMessageBox * msg = new QMessageBox;
     msg->setText("Person Edited Successfully.");

@@ -48,7 +48,10 @@ SOURCES += \
     adminteamspaneldialog.cpp \
     addnewteamdiag.cpp \
     addpersontoteamdiag.cpp \
-    encrypt.cpp
+    encrypt.cpp \
+    teamrankingsdialog.cpp \
+    alltournamentsviewdiag.cpp \
+    emailverificationdiag.cpp
 
 HEADERS += \
         MyDate.h \
@@ -77,7 +80,10 @@ HEADERS += \
     adminteamspaneldialog.h \
     addnewteamdiag.h \
     addpersontoteamdiag.h \
-    encrypt.h
+    encrypt.h \
+    teamrankingsdialog.h \
+    alltournamentsviewdiag.h \
+    emailverificationdiag.h
 
 FORMS += \
         mainwindow.ui \
@@ -86,7 +92,8 @@ FORMS += \
     editperson.ui \
     adminspanel.ui \
     addnewteamdiag.ui \
-    addpersontoteamdiag.ui
+    addpersontoteamdiag.ui \
+    emailverificationdiag.ui
 
 DISTFILES += \
     ReadME.pdf \

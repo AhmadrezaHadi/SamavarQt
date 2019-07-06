@@ -18,9 +18,12 @@ protected:
     QString username;
     QString password;
     int score;
+
+    void swap(int *xp, int *yp);
+
 public:
     Team();
-    Team(QString &name,QString &username,QString &password);//increase Id;
+    Team(QString &name,QString &username,QString &password, int score);//increase Id;
 
     //-------------Setter-------------------------------
     void setTeamName(QString name);
@@ -49,6 +52,8 @@ public:
     void changeGender(QString natCode,bool gen);
     void deletePerson(QString natCode);
     void editPerson(Person p , int index);
+
+
 
 };
 

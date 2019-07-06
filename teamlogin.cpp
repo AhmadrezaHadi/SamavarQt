@@ -7,6 +7,7 @@
 #include "PingPong.h"
 #include "Team.h"
 #include "allteamsdialog.h"
+#include "encrypt.h"
 
 
 
@@ -52,17 +53,17 @@ void teamLogin::on_loginButton_clicked()
     QString p1 = "mamad" , p2= "ali" , p3 ="ahmad" ;
     QString password = "1";
 
-    Team t1(username1 , username1 , password) , t2(username2 , username2 , password);
+    //Team t1(username1 , username1 , password, 0) , t2(username2 , username2 , password, 0);
 
-    Person person1(p1 , p1 , true , "1");
-    Person person2(p2 ,p2 , 1 ,"1") , person3(p3 ,p3 ,1, "1") ;
+    //Person person1(p1 , p1 , true , "1");
+    //Person person2(p2 ,p2 , 1 ,"1") , person3(p3 ,p3 ,1, "1") ;
 
-    t1.addPerson(person1);
-    t1.addPerson(person2);
-    t2.addPerson(person1);
-    t2.addPerson(person3);
-    bbvb.addTeam(t1);
-    bbvb.addTeam(t2);
+//    t1.addPerson(person1);
+//    t1.addPerson(person2);
+//    t2.addPerson(person1);
+//    t2.addPerson(person3);
+//    bbvb.addTeam(t1);
+//    bbvb.addTeam(t2);
 
 
 
@@ -73,12 +74,12 @@ void teamLogin::on_loginButton_clicked()
 
     globalType = index;
 
-    bool checkusername =false;
+    bool checkusername = false;
     if (index == 0){
         for (int i=0; i < bbvb.getTeams().size(); ++i){
             if (ui->lineEditUsername->text() == bbvb.getTeams()[i].getUsername()){
                 checkusername =true;
-                if (ui->lineEditPassword->text() == bbvb.getTeams()[i].getPassword()){
+                if (incrypt::encryption(ui->lineEditPassword->text()) == bbvb.getTeams()[i].getPassword()){
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Login Successful!");
                     msg->show();
@@ -104,12 +105,17 @@ void teamLogin::on_loginButton_clicked()
     }else if (index == 1){
         for (int i = 0; i < pp.getTeams().size(); ++i){
             if (ui->lineEditUsername->text() == pp.getTeams()[i].getUsername()){
-                if(ui->lineEditPassword->text() == pp.getTeams()[i].getPassword()){
+                if(incrypt::encryption(ui->lineEditPassword->text()) == pp.getTeams()[i].getPassword()){
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Login Successful!");
                     msg->show();
 
-                    //TODO complete here 1 for pingpong
+                    ui->tabWidget->removeTab(0);
+
+                    globalIndex = i;
+
+                    ui->tabWidget->addTab(ui->mainTab,"login");
+                    ui->teamPanelLabel->setText("Welcome " + pp.getTeams()[i].getTeamName() + " !");
                 }else {
                     QMessageBox* msg = new QMessageBox;
                     msg->setText("Wrong password, try again.");
@@ -124,11 +130,16 @@ void teamLogin::on_loginButton_clicked()
     }else if (index == 2){
         for (int i = 0; i < wr.getTeams().size(); ++i){
             if (ui->lineEditUsername->text() == wr.getTeams()[i].getUsername()){
-                if (ui->lineEditPassword->text() == wr.getTeams()[i].getPassword()){
+                if (incrypt::encryption(ui->lineEditPassword->text()) == wr.getTeams()[i].getPassword()){
                     QMessageBox * msg = new QMessageBox;
                     msg->setText("Login Succesfull.");
                     msg->show();
-                    //TODO complete here 2 for wr
+                    ui->tabWidget->removeTab(0);
+
+                    globalIndex = i;
+
+                    ui->tabWidget->addTab(ui->mainTab,"login");
+                    ui->teamPanelLabel->setText("Welcome " + wr.getTeams()[i].getTeamName() + " !");
                 }else{
                     QMessageBox * msg = new QMessageBox;
                     msg->setText("Wrong password, try again.");
@@ -147,24 +158,12 @@ void teamLogin::on_loginButton_clicked()
 
 void teamLogin::on_editTeamPushButton_clicked()
 {
-    if (globalType == 0){ //bbvb with team of index globalIndex
-        editMembers * editDiag = new editMembers(0,globalIndex);
-        editDiag->show();
-    }else if (globalType == 1){
-        //TODO complete here
-    }else if (globalType == 2){
-        //TODO complete here
-    }
+    editMembers * editDiag = new editMembers(0,globalIndex);
+    editDiag->show();
 }
 
 void teamLogin::on_allTeamsPushButton_clicked()
 {
-    if (globalType == 0){
-        allTeamsDialog * allteams = new allTeamsDialog(globalType);
-        allteams->show();
-    }else if (globalType == 1){
-        //TODO complete here
-    }else if (globalType == 2){
-        //TODO complete here
-    }
+    allTeamsDialog * allteams = new allTeamsDialog(globalType);
+    allteams->show();
 }

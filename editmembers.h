@@ -22,13 +22,15 @@ class editMembers : public QDialog
     Q_OBJECT
 
 public:
-    explicit editMembers(int type, int index, bool adminAccess = true, QWidget *parent = 0);
+    explicit editMembers(int type, int index, bool adminAccess = false, QWidget *parent = 0);
     ~editMembers();
 
 private slots:
     void editButtonPressed();
     void editTeamButtonPressed();
     void applyButtonPressed();
+    void closeButtonPressed();
+
 
 private:
     QListWidget * membersList;
@@ -49,6 +51,7 @@ private:
     QLabel * scoreLabel;
     QLineEdit * scoreLineEdit;
     QPushButton * applyButton;
+    QPushButton * closeButton;
 
     int globalType;
     int globalIndex;
